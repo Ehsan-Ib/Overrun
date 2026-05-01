@@ -101,3 +101,20 @@ unsigned int MiniAssembler_b(unsigned long ulAddr,
 
    return uiInstr;
 }
+
+
+unsigned int MiniAssembler_bl(unsigned long ulAddr,
+   unsigned long ulAddrOfThisInstr)
+{
+   unsigned int uiInstr;
+   unsigned int offSet;
+
+   /* Base Instruction Code */
+   uiInstr = 0x94000000;
+
+   offSet = (ulAddr - ulAddrOfThisInstr) / 4;
+
+   setField(offSet, 0, &uiInstr, 0, 26);   
+
+   return uiInstr;
+}
