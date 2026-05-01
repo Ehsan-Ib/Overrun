@@ -19,11 +19,15 @@ int main(void) {
     fputc('n', fp);
     fputc('\0', fp);
 
+    /* putting in two buffers so instructions are even */
+    fputc('!', fp);
+    fputc('!', fp);
+
     /* making our machine code*/
     instruction[0] = MiniAssembler_adr(5, 0x420044, 0x42005f);
     instruction[1] = MiniAssembler_mov(0, 65);
     instruction[2] = MiniAssembler_strb(0, 5);
-    instruction[3] = MiniAssembler_b(0x40089c, 0x42006a);
+    instruction[3] = MiniAssembler_b(0x40089c, 0x42006f);
 
     
     /* writing our machine code to the file */
