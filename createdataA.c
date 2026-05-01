@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "miniassembler.h"
-#include "miniassembler.c"
 
 /* this program creates a file named "dataA" to be used as input to grader */
 /* this files contains the name Ehsan and then our assembly code to give us a A grade */
@@ -9,7 +8,7 @@
 
 int main(void) {
     int i;
-    int instruction[4];
+    size_t instruction[4];
     FILE *fp = fopen("dataA", "w");
     
     /* putting in the name Ehsan*/
@@ -21,7 +20,7 @@ int main(void) {
     fputc('\0', fp);
 
     /* making our machine code*/
-    instruction[0] = MiniAssembler_adr(5, 0x420044);
+    instruction[0] = MiniAssembler_adr(5, 0x420044, 0x42005e);
     instruction[1] = MiniAssembler_mov(0, 65);
     instruction[2] = MiniAssembler_strb(0, 5);
     instruction[3] = MiniAssembler_b(0x40089c, 0x420061);
