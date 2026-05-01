@@ -8,7 +8,7 @@
 
 int main(void) {
     int i;
-    size_t instruction[4];
+    unsigned int instruction[4];
     FILE *fp = fopen("dataA", "w");
     
     /* putting in the name Ehsan*/
@@ -23,7 +23,7 @@ int main(void) {
     instruction[0] = MiniAssembler_adr(5, 0x420044, 0x42005e);
     instruction[1] = MiniAssembler_mov(0, 65);
     instruction[2] = MiniAssembler_strb(0, 5);
-    instruction[3] = MiniAssembler_b(0x40089c, 0x420061);
+    instruction[3] = MiniAssembler_b(0x40089c, 0x42006a);
 
     /* writing our machine code to the file */
     for (i = 0; i < 4; i++) {
