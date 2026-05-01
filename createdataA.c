@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <miniassembler.h>
+#include <miniassembler.c>
 
 /* this program creates a file named "dataA" to be used as input to grader */
 /* this files contains the name Ehsan and then our assembly code to give us a A grade */
