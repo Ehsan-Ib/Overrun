@@ -21,7 +21,7 @@ int main(void) {
     fputc('\0', fp);
 
     /* making our machine code*/
-    instruction[0] = MiniAssembler_addr(5, 0x420044);
+    instruction[0] = MiniAssembler_adr(5, 0x420044);
     instruction[1] = MiniAssembler_mov(0, 65);
     instruction[2] = MiniAssembler_strb(0, 5);
     instruction[3] = MiniAssembler_b(0x40089c, 0x420061);
