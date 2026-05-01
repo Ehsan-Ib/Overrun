@@ -25,7 +25,7 @@ int main(void) {
 
     /* making our machine code*/
     instruction[0] = MiniAssembler_adr(0, 0x42006c, 0x420060);
-    instruction[1] = MiniAssembler_bl(0x400690, 0x420064);
+    instruction[1] = MiniAssembler_bl(0x400670, 0x420064);
     instruction[2] = MiniAssembler_b(0x4008b0, 0x420068);
     
     /* writing our machine code to the file */
