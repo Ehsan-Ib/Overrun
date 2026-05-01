@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 int main(void) {
+    int i;
     FILE *fp = fopen("dataB", "w");
     
     fputc('E', fp);
