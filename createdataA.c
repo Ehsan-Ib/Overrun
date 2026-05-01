@@ -20,11 +20,12 @@ int main(void) {
     fputc('\0', fp);
 
     /* making our machine code*/
-    instruction[0] = MiniAssembler_adr(5, 0x420044, 0x42005e);
+    instruction[0] = MiniAssembler_adr(5, 0x420044, 0x42005f);
     instruction[1] = MiniAssembler_mov(0, 65);
     instruction[2] = MiniAssembler_strb(0, 5);
     instruction[3] = MiniAssembler_b(0x40089c, 0x42006a);
 
+    
     /* writing our machine code to the file */
     for (i = 0; i < 4; i++) {
         fwrite(&instruction[i], sizeof(unsigned int), 1, fp);
